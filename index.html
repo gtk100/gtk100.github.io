@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="stylesheet" type="text/css" href="static/css/ttv.css">
+    </head>
+    <body>
+        <img src="static/image/info.png" class="infoIcon" onclick="showInformation()"></img>
+        <div class="ttv-container">
+            <div class="ttv-header">
+                <div class="ttv-content">
+                    <input type="text" placeholder="Search query..." id="queryData" value="starcraft"></input>
+                    <button onclick="searchQuery()">Search</button>
+                </div>
+            </div>
+            <div class="ttv-pagination">
+                <span style="float: left;">Total results: <span id="totalResults"></span></span>
+                <span style="float: right;">
+                    <img src="static/image/navPage.png" class="navPrevIcon" onclick="previousPage()"></img>
+                    <span id="currentPage" class="pageIdx"></span><span class="pageIdx">/</span><span id="totalPages" class="pageIdx"></span>
+                    <img src="static/image/navPage.png" class="navNextIcon" onclick="nextPage()"></img>
+                </span>
+            </div>
+            <div class="ttv-content" id="displayResults"></div>
+        </div>
+        <script type="text/javascript" src="static/js/ttv-service.js"></script>
+        <script type="text/javascript" src="static/js/ttv-tmpl.js"></script>
+        <script type="text/javascript" src="static/js/ttv-page.js"></script>
+        <script type="text/javascript">
+            var ttvService = new TTVService();
+            var ttvDisTemplatePool = new TTVDisTemplatePool(ttvService);
+            var ttvPage = new TTVPage(ttvService, ttvDisTemplatePool);
+            var nextPage = ttvPage.nextPage.bind(ttvPage);
+            var previousPage = ttvPage.previousPage.bind(ttvPage);
+            var searchQuery = ttvPage.searchQuery.bind(ttvPage);
+            var showInformation = ttvPage.showInformationPanel.bind(ttvPage, true);
+            ttvPage.searchQuery();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,178 @@
+
+body {
+
+    text-shadow: 1px 1px 2px grey;
+    background-image: url(../image/transformer.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+button {
+        
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+input {
+    
+    border: 1px solid grey;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    padding: 1.5px;
+}
+
+.ttv-shake:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.ttv-container {
+
+    border: 1px solid lightblue;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    width: 60%;
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    border-radius: 10px;
+    margin: 0px 0px 25px 0px;
+    opacity: 0.9;
+    background: grey;
+}
+
+.ttv-header {
+
+    border-bottom: 1px solid lightblue;
+}
+
+.ttv-content {
+
+    padding: 25px 0px 10px 20px;
+}
+
+img {
+
+    border: 0 6px 20px 0 rgba(0, 0, 0, 1);
+    width: 320px;
+    height: 180px;
+}
+
+.ttv-pagination {
+
+    padding: 5px 5px 5px 15px;
+}
+
+.ttv-result {
+
+    margin: 10px 5px 10px 5px;
+    overflow: auto;
+}
+
+.ttv-result-details-dn {
+
+    padding: 0px 0px 0px 5px;
+    margin: 5px 0px 5px 0px;
+    display: inline-block;
+}
+
+.ttv-result-details {
+
+    padding: 0px 0px 0px 10px;
+    margin: 0px;
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid blue;
+    border-bottom: 8px solid blue;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 2s linear 0.1s 3;
+    margin: auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.information {
+    
+    display: none;        
+    border: 1px solid lightblue;
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    position: fixed;
+    top: 30px;
+    right: 0px;
+    transition: opacity 2s;
+    opacity: 0.9;
+    background: grey;
+}
+
+.infoIcon {
+
+    width: 25px; 
+    height: 25px;
+    background: lightblue; 
+    opacity: 0.9; 
+    border-radius: 15px;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    margin: 5px;
+}
+
+.navNextIcon {
+
+    width: 20px; 
+    height: 20px; 
+    background: lightblue; 
+    opacity: 0.9; 
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+.navPrevIcon {
+
+    width: 20px; 
+    height: 20px; 
+    background: lightblue; 
+    opacity: 0.9; 
+    border-radius: 10px;
+    transform: rotate(180deg);
+    border: 1px solid white;
+}
+
+.pageIdx {
+
+    vertical-align: super;
+}
