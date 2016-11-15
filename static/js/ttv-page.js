@@ -121,6 +121,17 @@ TTVPage.prototype.removeInformationPanel = function() {
 }
 
 /*
+    Captures text box enter key
+*/
+TTVPage.prototype.actOnKeyPress = function(event) {
+
+	var key = event.which || event.keyCode;
+    if(key === 13){
+		this.searchQuery();
+    }
+}
+
+/*
     Displays the result in HTML page based on current page logic
 */
 TTVPage.prototype.displayResultByPage = function(startIdx) {

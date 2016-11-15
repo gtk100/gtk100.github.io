@@ -10,7 +10,7 @@
         <div class="ttv-container">
             <div class="ttv-header">
                 <div class="ttv-content">
-                    <input type="text" placeholder="Search query..." id="queryData" value="starcraft"></input>
+                    <input type="text" placeholder="Search query..." id="queryData" value="starcraft" onkeypress="queryKeyPressed(event)"></input>
                     <button onclick="searchQuery()">Search</button>
                 </div>
             </div>
@@ -34,6 +34,7 @@
             var nextPage = ttvPage.nextPage.bind(ttvPage);
             var previousPage = ttvPage.previousPage.bind(ttvPage);
             var searchQuery = ttvPage.searchQuery.bind(ttvPage);
+            var queryKeyPressed = ttvPage.actOnKeyPress.bind(ttvPage);
             var showInformation = ttvPage.showInformationPanel.bind(ttvPage, true);
             ttvPage.searchQuery();
         </script>
